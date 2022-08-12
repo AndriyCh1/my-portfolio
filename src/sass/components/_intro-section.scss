@@ -1,0 +1,98 @@
+.intro {
+  padding: 20px 50px;
+  @include flex(center, center);
+  height: 100vh;
+  gap: 130px;
+
+  @include tablet {
+    flex-direction: column-reverse;
+    gap: 60px;
+  }
+
+  &__info {
+    &__title {
+      font-size: 3rem;
+      line-height: 60px;
+
+      span {
+        display: block;
+      }
+    }
+
+    &__subtitle {
+      font-size: 1.2rem;
+      color: $txt-second-color;
+    }
+
+    &__btns {
+      margin-top: 40px;
+      @include flex(center, flex-start);
+      gap: 10px;
+
+      &__btn:hover {
+        transition: all 0.4s ease-in-out;
+        background-color: $green-color !important;
+      }
+    }
+  }
+
+  &__image {
+    @include flex(center, center);
+    border-radius: 50%;
+    position: relative;
+
+    img {
+      width: 500px;
+      height: 500px;
+      object-fit: cover;
+      border-radius: inherit;
+      filter: grayscale(50%);
+
+      @include tablet {
+        width: 350px;
+        height: 350px;
+      }
+
+      @include mobile {
+        width: 250px;
+        height: 250px;
+      }
+    }
+
+    $pulse-shadow: 0 0 45px rgba(39, 174, 96, 0.9);
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border: 0 solid $green-color;
+      border-radius: inherit;
+      box-shadow: $pulse-shadow;
+      animation: pulse 6s linear infinite;
+      overflow: hidden;
+
+      @include tablet {
+        width: 350px;
+        height: 350px;
+      }
+
+      @include mobile {
+        width: 250px;
+        height: 250px;
+      }
+    }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
