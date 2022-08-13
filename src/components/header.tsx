@@ -48,4 +48,6 @@ const Header = () => {
   );
 };
 
+// TODO: rewrite burger menu logic
+
 export default Header;
