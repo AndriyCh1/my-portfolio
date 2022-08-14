@@ -6,6 +6,7 @@ import JSIcon from '../assets/images/javascript.png';
 import ReactIcon from '../assets/images/react.png';
 import BootstrapIcon from '../assets/images/bootstrap.png';
 import ReduxIcon from '../assets/images/redux.png';
+import SASSIcon from '../assets/images/sass.png';
 
 import NodeIcon from '../assets/images/node-js.png';
 import ExpressIcon from '../assets/images/express.png';
@@ -33,6 +34,7 @@ const skills: ICategory[] = [
       { name: 'Javascript', icon: JSIcon },
       { name: 'React', icon: ReactIcon },
       { name: 'Redux', icon: ReduxIcon },
+      { name: 'SASS', icon: SASSIcon },
       { name: 'Bootstrap', icon: BootstrapIcon },
     ],
   },

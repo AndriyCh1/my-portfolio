@@ -1,6 +1,6 @@
 .navigation {
   @include flex(center, center);
-  z-index: 100;
+  z-index: 1000;
   position: fixed;
   top: 50%;
   right: 10px;
