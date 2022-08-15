@@ -37,6 +37,10 @@
       @include tablet {
         height: 150px;
       }
+
+      @include mobile {
+        height: 120px;
+      }
     }
 
     &__down {
