@@ -3,6 +3,7 @@ import IntroSection from "./intro-section";
 import AboutSection from "./about-section";
 import SkillsSection from "./skills-section";
 import CareerSection from "./career-section";
+import PortfolioSection from "./portfolio-section";
 
 const Main = () => {
     return (
@@ -11,6 +12,7 @@ const Main = () => {
             <AboutSection />
             <SkillsSection />
             <CareerSection />
+            <PortfolioSection />
         </main>
     );
 };

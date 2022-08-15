@@ -1,19 +1,19 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import Section from './section';
-import HTMLIcon from '../assets/images/html.png';
-import CSSIcon from '../assets/images/css.png';
-import JSIcon from '../assets/images/javascript.png';
-import ReactIcon from '../assets/images/react.png';
-import BootstrapIcon from '../assets/images/bootstrap.png';
-import ReduxIcon from '../assets/images/redux.png';
-import SASSIcon from '../assets/images/sass.png';
+import HTMLIcon from '../assets/images/skills/html.png';
+import CSSIcon from '../assets/images/skills/css.png';
+import JSIcon from '../assets/images/skills/javascript.png';
+import ReactIcon from '../assets/images/skills/react.png';
+import BootstrapIcon from '../assets/images/skills/bootstrap.png';
+import ReduxIcon from '../assets/images/skills/redux.png';
+import SASSIcon from '../assets/images/skills/sass.png';
 
-import NodeIcon from '../assets/images/node-js.png';
-import ExpressIcon from '../assets/images/express.png';
-import PostgreSQLIcon from '../assets/images/postgres.png';
-import TypescriptIcon from '../assets/images/typescript.png';
-import MongoDBIcon from '../assets/images/mongodb.png';
-import TypeORMIcon from '../assets/images/typeorm.png';
+import NodeIcon from '../assets/images/skills/node-js.png';
+import ExpressIcon from '../assets/images/skills/express.png';
+import PostgreSQLIcon from '../assets/images/skills/postgres.png';
+import TypescriptIcon from '../assets/images/skills/typescript.png';
+import MongoDBIcon from '../assets/images/skills/mongodb.png';
+import TypeORMIcon from '../assets/images/skills/typeorm.png';
 
 interface ISkill {
   name: string;
