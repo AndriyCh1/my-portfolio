@@ -6,8 +6,8 @@ import Button from './button';
 
 const IntroSection = () => {
   return (
-    <Section>
-      <div className="intro">
+    <Section className="intro">
+      {/*<div className="intro">*/}
         <div className="intro__info">
           <h2 className="intro__info__title">
             Hi, I am <span>Chekanovskyi Andrii</span>
@@ -25,7 +25,7 @@ const IntroSection = () => {
         <div className="intro__image">
           <img src={IntroPhoto} alt="" />
         </div>
-      </div>
+      {/*</div>*/}
     </Section>
   );
 };

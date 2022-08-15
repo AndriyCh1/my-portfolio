@@ -1,0 +1,35 @@
+.checkbox {
+  @include flex(center, flex-start);
+
+  cursor: pointer;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  &__checkmark {
+    margin-right: 10px;
+    height: 15px;
+    width: 15px;
+    border: 1px solid $txt-second-color;
+
+    &__icon {
+      transform: scale(0);
+      transition: transform 0.3s ease;
+    }
+  }
+
+  input:checked ~ &__checkmark {
+    background-color: $bg-second-color;
+    border: 1px solid $green-color;
+    color: $green-color;
+  }
+
+  input:checked ~ &__checkmark > &__checkmark__icon {
+    transform: scale(1);
+  }
+}
