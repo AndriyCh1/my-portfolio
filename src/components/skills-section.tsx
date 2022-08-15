@@ -1,62 +1,16 @@
 import React, { Fragment, useEffect, useState } from 'react';
+
 import Section from './section';
-import HTMLIcon from '../assets/images/skills/html.png';
-import CSSIcon from '../assets/images/skills/css.png';
-import JSIcon from '../assets/images/skills/javascript.png';
-import ReactIcon from '../assets/images/skills/react.png';
-import BootstrapIcon from '../assets/images/skills/bootstrap.png';
-import ReduxIcon from '../assets/images/skills/redux.png';
-import SASSIcon from '../assets/images/skills/sass.png';
 
-import NodeIcon from '../assets/images/skills/node-js.png';
-import ExpressIcon from '../assets/images/skills/express.png';
-import PostgreSQLIcon from '../assets/images/skills/postgres.png';
-import TypescriptIcon from '../assets/images/skills/typescript.png';
-import MongoDBIcon from '../assets/images/skills/mongodb.png';
-import TypeORMIcon from '../assets/images/skills/typeorm.png';
-
-interface ISkill {
-  name: string;
-  icon: any;
-}
-
-interface ICategory {
-  category: string;
-  skills: ISkill[];
-}
-
-const skills: ICategory[] = [
-  {
-    category: 'Frontend',
-    skills: [
-      { name: 'HTML5', icon: HTMLIcon },
-      { name: 'CSS3', icon: CSSIcon },
-      { name: 'Javascript', icon: JSIcon },
-      { name: 'React', icon: ReactIcon },
-      { name: 'Redux', icon: ReduxIcon },
-      { name: 'SASS', icon: SASSIcon },
-      { name: 'Bootstrap', icon: BootstrapIcon },
-    ],
-  },
-  {
-    category: 'Backend',
-    skills: [
-      { name: 'Node.js', icon: NodeIcon },
-      { name: 'Express.js', icon: ExpressIcon },
-      { name: 'Typescript', icon: TypescriptIcon },
-      { name: 'PostgresSQL', icon: PostgreSQLIcon },
-      { name: 'MongoDb', icon: MongoDBIcon },
-      { name: 'TypeORM', icon: TypeORMIcon },
-    ],
-  },
-];
+import skills, { ICategory, ISkill } from "../assets/data/skills-data";
 
 const SkillsSection = () => {
+  const skillsData = skills.getAll();
   const [skillCategories, setSkillCategories] = useState<string[]>([]);
   const [currentCategory, setCurrentCategory] = useState('');
 
   useEffect(() => {
-    const categories = skills.reduce(
+    const categories = skillsData.reduce(
       (items, current) => items.concat(current.category),
       [] as string[],
     );
@@ -78,7 +32,7 @@ const SkillsSection = () => {
           </p>
         ))}
       </div>
-      {skills.map((categoryItem: ICategory, index) => (
+      {skillsData.map((categoryItem: ICategory, index) => (
         <Fragment key={index}>
           {categoryItem.category === currentCategory ? (
             <div className="skills__list">
@@ -93,7 +47,9 @@ const SkillsSection = () => {
   );
 };
 
-const Skill: React.FC<ISkill> = ({ name, icon }) => {
+interface ISkillProps extends ISkill {}
+
+const Skill: React.FC<ISkillProps> = ({ name, icon }) => {
   return (
     <div className="skills__list__item">
       <div className="skills__list__item__image">

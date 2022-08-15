@@ -1,52 +1,19 @@
 import React from 'react';
+
 import Section from './section';
 
 import { BsGithub as GithubIcon } from 'react-icons/bs';
 import { BiLinkAlt as LinkIcon } from 'react-icons/bi';
 
-import todoImg from '../assets/images/portfolio/todo.png';
-import schedulerImg from '../assets/images/portfolio/scheduler.png';
-import tourImg from '../assets/images/portfolio/tour-manag.png';
-
-interface IPortfolioItem {
-  title: string;
-  description: string;
-  img: any;
-  githubLink: string;
-  hostingLink?: string;
-}
-
-const portfolioItems: IPortfolioItem[] = [
-  {
-    title: 'ToDo',
-    description: 'psum dolor sit amet,  consectetur adipiscing elit, sed do eiusmod',
-    img: todoImg,
-    githubLink: 'https://github.com/AndriyCh1/Todo',
-    hostingLink: 'https://todo-app311.herokuapp.com/',
-  },
-  {
-    title: 'Task Scheduler',
-    description:
-      'psum dolor sit amet, consectetur adipiscing elit,consectetur adipiscing elit, sed do eiusmod, consectetur adipiscing elit, sed do eiusmod, sed do eiusmod, consectetur adipiscing elit, sed do eiusmod',
-    img: schedulerImg,
-    githubLink: 'https://github.com/AndriyCh1/Scheduler',
-    hostingLink: 'https://scheduler-app31.herokuapp.com/',
-  },
-  {
-    title: 'Tour management',
-    description:
-      'psum dolor sit amet, consectetur adipiscing elit, sed do eiusmod, consectetur adipiscing elit, sed do eiusmod',
-    img: tourImg,
-    githubLink: 'https://github.com/AndriyCh1/travel-agency',
-    hostingLink: 'https://agency-web31.herokuapp.com/',
-  }
-];
+import portfolio, {IPortfolioItem} from "../assets/data/portfolio-data"
 
 const PortfolioSection = () => {
+  const portfolioData = portfolio.getAll();
+
   return (
     <Section title="Portfolio" className="portfolio">
       <div className="portfolio-list">
-        {portfolioItems.map((item, index) => (
+        {portfolioData.map((item, index) => (
           <PortfolioItem
             key={index}
             title={item.title}
