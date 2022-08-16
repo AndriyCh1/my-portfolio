@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Input from './input';
 import Section from './section';
 import Button from './button';
@@ -18,12 +18,11 @@ const ContactSection = () => {
 
   const form = useRef<HTMLFormElement>(null);
 
-
   const showResponse = (res: typeof emailResponse) => {
     setEmailResponse(res);
 
-     setTimeout(() => {
-      setEmailResponse({status: -1, message: ""})
+    setTimeout(() => {
+      setEmailResponse({ status: -1, message: '' });
     }, 3000);
   };
 
@@ -99,6 +98,7 @@ const ContactSection = () => {
         />
 
         <textarea
+          required={true}
           name="message"
           className="contact-form__textarea"
           placeholder="Message"
