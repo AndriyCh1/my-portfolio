@@ -1,5 +1,5 @@
 .intro {
-  padding: 20px 50px;
+  padding: 20px calc(50px + 50px);
   @include flex(center, center);
   height: 100vh;
   gap: 130px;
