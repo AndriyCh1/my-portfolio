@@ -1,0 +1,13 @@
+.footer {
+  background-color: $bg-main-color;
+  height: 100%;
+  text-align: center;
+  padding: 10px 0;
+  border-top: 2px solid $bg-second-color;
+  color: $txt-second-color;
+  font-size: 1rem;
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
