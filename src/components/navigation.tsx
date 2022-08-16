@@ -1,38 +1,38 @@
-import React, { useRef, useState } from 'react';
-import {
-  BsHouseFill as HomeIcon,
-  BsTools as SkillsIcon,
-  BsPersonFill as AboutIcon,
-  BsBriefcaseFill as PortfolioIcon,
-  BsFillEnvelopeFill as ContactIcon,
-} from 'react-icons/bs';
-import { GiHamburgerMenu as MenuBurger } from 'react-icons/gi';
-import { MdTimeline as TimelineIcon } from 'react-icons/md';
+import React, { RefObject, useRef, useState } from 'react';
+import { GiHamburgerMenu as MenuIcon } from 'react-icons/gi';
+import { BsXLg as CloseMenuIcon } from 'react-icons/bs';
+import { INavigationItem } from '../common/interfaces';
 
-const headerItems = [
-  { icon: HomeIcon, display: 'home' },
-  { icon: AboutIcon, display: 'about me' },
-  { icon: SkillsIcon, display: 'my skills' },
-  { icon: PortfolioIcon, display: 'portfolio' },
-  { icon: TimelineIcon, display: 'career' },
-  { icon: ContactIcon, display: 'contacts' },
-];
+interface IProps {
+  items: INavigationItem<HTMLDivElement>[];
+}
 
-const Navigation = () => {
+const Navigation: React.FC<IProps> = ({ items }) => {
   const [activeTab, setActiveTab] = useState(0);
   const navigationElement = useRef<HTMLDivElement>(null);
   const toggleNavigation = () => navigationElement.current?.classList.toggle('active');
 
+  const handleClick = (to: RefObject<HTMLDivElement>) => {
+    to.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <nav className="navigation" ref={navigationElement}>
       <div className="navigation__mobile-toggle" onClick={() => toggleNavigation()}>
-        <MenuBurger />
+        <MenuIcon className="menu-icon"/>
+        <CloseMenuIcon className="close-menu-icon" />
       </div>
-      {headerItems.map((item, index) => (
+      {items.map((item, index) => (
         <div
           key={index}
           className={`navigation__item ${activeTab === index ? 'active' : ''}`}
-          onClick={() => setActiveTab(index)}
+          onClick={() => {
+            setActiveTab(index);
+            toggleNavigation();
+            if (item.to) {
+              handleClick(item.to);
+            }
+          }}
         >
           {item.icon({ className: 'navigation__item__icon' })}
           <span className="navigation__item__description">{item.display}</span>

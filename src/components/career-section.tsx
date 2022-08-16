@@ -1,4 +1,4 @@
-import React, { Fragment, useCallback, useEffect, useState } from 'react';
+import React, {Fragment, RefObject, useCallback, useEffect, useState} from 'react';
 
 import Section from './section';
 import CheckBox from './check-box';
@@ -21,7 +21,11 @@ enum FILTERS {
   activity = 'ACTIVITY',
 }
 
-const CareerSection = () => {
+interface IProps {
+  refer?: RefObject<HTMLDivElement>;
+}
+
+const CareerSection: React.FC<IProps> = ({refer}) => {
   const initFilter = {
     education: true,
     activity: false,
@@ -86,7 +90,7 @@ const CareerSection = () => {
   }, [updateData]);
 
   return (
-    <Section title={'Career'} className="career">
+    <Section refer={refer} title={'Career'} className="career">
       <div className="career-filters">
         <CheckBox
           checked={filter.education}

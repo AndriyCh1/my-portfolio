@@ -1,10 +1,14 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, {Fragment, RefObject, useEffect, useState} from 'react';
 
 import Section from './section';
 
 import skills, { ICategory, ISkill } from "../assets/data/skills-data";
 
-const SkillsSection = () => {
+interface IProps {
+    refer?: RefObject<HTMLDivElement>;
+}
+
+const SkillsSection: React.FC<IProps> = ({refer}) => {
   const skillsData = skills.getAll();
   const [skillCategories, setSkillCategories] = useState<string[]>([]);
   const [currentCategory, setCurrentCategory] = useState('');
@@ -20,7 +24,7 @@ const SkillsSection = () => {
   }, []);
 
   return (
-    <Section title="Skills" className="skills">
+    <Section refer={refer} title="Skills" className="skills">
       <div className="skills__tabs">
         {skillCategories.map((item, index) => (
           <p

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, {RefObject, useRef, useState} from 'react';
 import Input from './input';
 import Section from './section';
 import Button from './button';
@@ -7,7 +7,11 @@ import env from '../utils/env';
 
 const { SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY, TO_EMAIL } = env;
 
-const ContactSection = () => {
+interface IProps {
+  refer?: RefObject<HTMLDivElement>;
+}
+
+const ContactSection: React.FC<IProps> = ({refer}) => {
   const [nameInput, setNameInput] = useState('');
   const [lastNameInput, setLastNameInput] = useState('');
   const [emailInput, setEmailInput] = useState('');
@@ -61,7 +65,7 @@ const ContactSection = () => {
   };
 
   return (
-    <Section title="Get in touch" className="contact">
+    <Section refer={refer} title="Get in touch" className="contact">
       <form className="contact-form" ref={form} onSubmit={sendEmail}>
         <Input
           name="name"

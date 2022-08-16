@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {RefObject} from 'react';
 import Section from './section';
 import {
   BsFillTelephoneFill as PhoneIcon,
@@ -7,9 +7,13 @@ import {
 } from 'react-icons/bs';
 import { MdEmail as EmailIcon } from 'react-icons/md';
 
-const AboutSection = () => {
+interface IProps {
+  refer?: RefObject<HTMLDivElement>;
+}
+
+const AboutSection: React.FC<IProps> = ({refer}) => {
   return (
-    <Section title="About" className="about">
+    <Section refer={refer} title="About" className="about">
       <div className="about__text">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {RefObject} from 'react';
 
 import Section from './section';
 
@@ -7,11 +7,15 @@ import { BiLinkAlt as LinkIcon } from 'react-icons/bi';
 
 import portfolio, {IPortfolioItem} from "../assets/data/portfolio-data"
 
-const PortfolioSection = () => {
+interface IProps {
+  refer?: RefObject<HTMLDivElement>;
+}
+
+const PortfolioSection: React.FC<IProps> = ({refer}) => {
   const portfolioData = portfolio.getAll();
 
   return (
-    <Section title="Portfolio" className="portfolio">
+    <Section refer={refer} title="Portfolio" className="portfolio">
       <div className="portfolio-list">
         {portfolioData.map((item, index) => (
           <PortfolioItem
