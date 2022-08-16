@@ -40,15 +40,12 @@ const CareerSection: React.FC<IProps> = ({refer}) => {
   const changeFilter = (type: string, checked: boolean) => {
     switch (type) {
       case FILTERS.education:
-        console.log('education', checked);
         setFilter({ ...filter, education: checked });
         break;
       case FILTERS.career:
-        console.log('career', checked);
         setFilter({ ...filter, career: checked });
         break;
       case FILTERS.activity:
-        console.log('activity', checked);
         setFilter({ ...filter, activity: checked });
         break;
       default:
