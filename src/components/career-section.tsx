@@ -119,7 +119,7 @@ const CareerSection = () => {
               <span className="career-path__mute"></span>
             </>
           ) : (
-            <div className="career-path__empty">No data, make sure. that at least on filter is chosen =)</div>
+            <div className="career-path__empty">No data, make sure, that at least one filter is chosen =)</div>
           )}
         </div>
       </div>

@@ -6,6 +6,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  padding-top: 20px;;
 
   @include tablet {
     grid-template-columns: repeat(2, 1fr);
