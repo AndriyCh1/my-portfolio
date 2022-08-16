@@ -1,0 +1,49 @@
+.input-wrapper {
+  outline: none;
+  position: relative;
+
+  .label {
+    color: $txt-second-color;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.4s ease;
+    padding-left: 3px;
+    font-weight: 600;
+    font-size: 1rem;
+    transform: translateY(40%);
+    cursor: text;
+    pointer-events: none;
+  }
+
+  .input {
+    background-color: $bg-main-color;
+    color: $txt-main-color;
+    box-shadow: none;
+    border: none;
+    border-bottom: 2px solid $grey-color;
+    padding: 3px;
+    padding-top: 7px;
+    transition: border-bottom-color 0.4s ease;
+
+    &:focus {
+      outline: none;
+      border-color: $txt-main-color;
+    }
+  }
+
+  .input:focus + .label,
+  .input:not([value=""]) + .label{
+    transform: translateY(-15px);
+  }
+
+  //.input:not([value=""]),
+  //.input:not([value=""]) + .label {
+  //  color: $txt-main-color;
+  //}
+
+  //
+  //.input:not([value=""]) {
+  //  border-color: $txt-main-color;
+  //}
+}
