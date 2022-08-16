@@ -9,19 +9,18 @@ interface IProps {
 
 const IntroSection: React.FC<IProps> = ({ refer }) => {
   return (
-    <Section refer={refer}className="intro">
+    <Section refer={refer} className="intro">
       <div className="intro__info">
         <h2 className="intro__info__title">
           Hi, I am <span>Chekanovskyi Andrii</span>
         </h2>
         <p className="intro__info__subtitle"> Fullstack Developer</p>
         <div className="intro__info__btns">
-          <Button className="intro__info__btns__btn" variant="secondary">
-            Download CV
-          </Button>
-          <Button className="intro__info__btns__btn" variant="secondary">
-            Learn More
-          </Button>
+          <a href="../assets/pdf/CV.pdf" target="_blank" download>
+            <Button className="intro__info__btns__btn" variant="secondary">
+              Download CV
+            </Button>
+          </a>
         </div>
       </div>
       <div className="intro__image">
