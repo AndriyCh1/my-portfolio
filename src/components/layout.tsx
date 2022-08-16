@@ -5,7 +5,7 @@ import Main from './main';
 
 const Layout = () => {
   return (
-    <div>
+    <div className="main-wrapper">
       <Header />
       <Main />
       <Footer />
