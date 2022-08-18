@@ -41,9 +41,11 @@ const paths: IPath[] = [
         startDate: new Date('2021-07-07'),
         endDate: new Date('2021-10-20'),
         role: 'Junior Full Stack Developer',
-        company: 'ТОВ Hardsoft',
-        description: '',
-        // 'Worked as a Junior Fullstack dev for a few months. Worked with ... The project was about...',
+        company: 'Hardsoft',
+        description:
+        'Worked with on the Sunflower project. This web-app helps to account and calculate tariffs, it generates monthly reports ' +
+        'payment documents and registers. I worked with several forms for accounting tariffs, tariff groups and counters.' +
+        '<br><span style="display: block; margin-top:5px"><b>Web stack:</b> React.js, Typescript, React Hook Form, Material-UI, Nest.js</span>',
       },
     ],
     education: [
@@ -65,19 +67,31 @@ const paths: IPath[] = [
       {
         startDate: new Date('2021-11-20'),
         endDate: new Date('2021-04-05'),
-        title: 'JS course at Binary Studio Academy',
-        description: '',
-        // 'Real work on the project "Grow Up". We were developing a system for tracking worker`s growing as a specialist. The main goal of the course is to gain real experience of working at a company. We had meet-ups everyday, demos at Fridays and spent time really effectively',
+        title: 'JS course at Binary Studio Academy ❤️',
+        description:
+        'Our team worked on the "Grow Up" project. We had been developing a system for tracking worker`s growing as a specialist. The main goal of the course is to gain real experience of working at a company. We had every day meet-ups, demos at Fridays and spent time really effectively.' +
+        '<br><span style="display: block; margin-top:5px"><b>Web stack: </b>Redux, React, TypeScript, JS, PostgreSQL, Amazon S3, SCSS, HTML5, Node.js, Express.js, TypeORM, Bootstrap, Chart.js, React Flow, Redux Toolkit.</span>' +
+        '<a style="display: block; margin-top:5px" href="https://study.binary-studio.com/certificate/b794584e-3746-4448-a62e-48bbd897c930">Certificate: JS course</a>'
       },
       {
         startDate: new Date('2017-11-15'),
         endDate: new Date('2017-11-15'),
-        title: '3nd place at the second stage of the All-Ukraine Olympiad in Math',
+        title: '2nd place in the second stage of the All-Ukrainian Mathematics Olympiad among students',
       },
       {
-        startDate: new Date('2017-11-15'),
-        endDate: new Date('2021-04-05'),
-        title: '2nd place at the ?? stage of the All-Ukraine Olympiad in Math',
+        startDate: new Date('2020-12-24'),
+        endDate: new Date('2020-12-24'),
+        title: '3rd place in the nomination "Programming" in the open information technology competition "Byte" among students of Ternopil ',
+      },
+      {
+        startDate: new Date('2018-11-20'),
+        endDate: new Date('2018-11-20'),
+        title: '2nd place in the second stage of the All-Ukrainian Mathematics Olympiad among students',
+      },
+      {
+        startDate: new Date('2022-07-08'),
+        title: '"Conversational English" course, EnglishDom',
+        description: '1:1 with tutor, 40% of speaking, 20% of listening, 20% of grammar'
       },
     ],
   },

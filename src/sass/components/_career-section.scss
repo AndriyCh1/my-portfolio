@@ -34,21 +34,21 @@
     display: none; /* Safari and Chrome */
   }
 
-  &__mute {
-    position: absolute;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background: rgb(0, 0, 0);
-    background: linear-gradient(
-      0,
-      rgba(87, 86, 86, 1) 14%,
-      rgba(79, 79, 79, 0.5),
-      rgba(213, 213, 213, 0) 100%
-    );
-    height: calc(10% - 10px);
-    z-index: 100;
-  }
+  //&__mute {
+  //  position: absolute;
+  //  right: 0;
+  //  left: 0;
+  //  bottom: 0;
+  //  background: rgb(0, 0, 0);
+  //  background: linear-gradient(
+  //    0,
+  //    rgba(87, 86, 86, 1) 14%,
+  //    rgba(79, 79, 79, 0.5),
+  //    rgba(213, 213, 213, 0) 100%
+  //  );
+  //  height: calc(10% - 10px);
+  //  z-index: 100;
+  //}
 
   &__item {
     &__wrapper {
@@ -69,18 +69,21 @@
       }
 
       p {
-        line-height: 15px;
-
         span {
           font-weight: 500;
         }
       }
 
       &__title {
-        font-weight: 700;
-        font-size: 1.15rem;
+        font-size: 1.3rem;
         text-transform: capitalize;
         margin-bottom: 5px;
+        color: $green-color;
+      }
+
+      a {
+        color: $green-color;
+        text-decoration: underline;
       }
     }
 

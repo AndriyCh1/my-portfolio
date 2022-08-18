@@ -6,6 +6,7 @@ import CheckBox from './check-box';
 import { BsFillBriefcaseFill as CareerIcon } from 'react-icons/bs';
 import { MdSchool as EducationIcon } from 'react-icons/md';
 import { FaSlackHash as ActivityIcon } from 'react-icons/fa';
+
 import timeline, {
   IActivity,
   ICareer,
@@ -139,7 +140,7 @@ const PathItemWrapper: React.FC<IPathItemProps> = ({ children, icon, startDate, 
   const date =
     endDate && !(startDate < endDate || startDate > endDate)
       ? `${formatDate(startDate)}`
-      : `${formatDate(startDate)} - ${endDate ? formatDate(endDate) : 'present'}`;
+      : `${formatDate(startDate)} - ${endDate ? formatDate(endDate) : 'still going'}`;
 
   return (
     <div className="career-path__item">
@@ -158,7 +159,7 @@ const CareerItem: React.FC<{ career: ICareer }> = ({ career }) => {
   return (
     <PathItemWrapper startDate={career.startDate} endDate={career.endDate} icon={<CareerIcon />}>
       <p className="career-path__item__content__title">{career.role}</p>
-      <p>{career.description}</p>
+      <p dangerouslySetInnerHTML={{ __html: career?.description || "" }} />
     </PathItemWrapper>
   );
 };
@@ -191,7 +192,7 @@ const ActivityItem: React.FC<{ activity: IActivity }> = ({ activity }) => {
       icon={<ActivityIcon />}
     >
       <p className="career-path__item__content__title">{activity.title}</p>
-      <p> {activity.description} </p>
+      <p dangerouslySetInnerHTML={{ __html: activity?.description || "" }} />
     </PathItemWrapper>
   );
 };

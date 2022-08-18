@@ -13,14 +13,14 @@ interface IProps {
 
 const AboutSection: React.FC<IProps> = ({refer}) => {
   return (
-    <Section refer={refer} title="About" className="about">
+    <Section refer={refer} title="About me" className="about">
       <div className="about__text">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-          ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-          sint occaecat cupidatat non proident
+          Hi! My name is Andriy, I am a 4th year student majoring in
+          Computer Science at Ternopil National University. I had several months of
+          work experience as a Full Stack Developer in a small company, which I joined
+          after training. I spend most of my time studying and learning something new,
+          every day I study new material and improve my skills.
         </p>
       </div>
       <div className="about__contacts">

@@ -13,7 +13,7 @@ export interface IPortfolioItem {
 const portfolioItems: IPortfolioItem[] = [
     {
         title: 'ToDo',
-        description: 'psum dolor sit amet,  consectetur adipiscing elit, sed do eiusmod',
+        description: 'Just simple task manager',
         img: todoImg,
         githubLink: 'https://github.com/AndriyCh1/Todo',
         hostingLink: 'https://todo-app311.herokuapp.com/',
@@ -21,7 +21,7 @@ const portfolioItems: IPortfolioItem[] = [
     {
         title: 'Task Scheduler',
         description:
-            'psum dolor sit amet, consectetur adipiscing elit,consectetur adipiscing elit, sed do eiusmod, consectetur adipiscing elit, sed do eiusmod, sed do eiusmod, consectetur adipiscing elit, sed do eiusmod',
+            'Improved task manager with ability to assign some date',
         img: schedulerImg,
         githubLink: 'https://github.com/AndriyCh1/Scheduler',
         hostingLink: 'https://scheduler-app31.herokuapp.com/',
@@ -29,7 +29,7 @@ const portfolioItems: IPortfolioItem[] = [
     {
         title: 'Tour management',
         description:
-            'psum dolor sit amet, consectetur adipiscing elit, sed do eiusmod, consectetur adipiscing elit, sed do eiusmod',
+            'The app is created for managing tours, its categories and guides',
         img: tourImg,
         githubLink: 'https://github.com/AndriyCh1/travel-agency',
         hostingLink: 'https://agency-web31.herokuapp.com/',
