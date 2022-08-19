@@ -19,6 +19,15 @@
     width: 100%;
     font-size: 1.2rem;
     grid-area: i;
+
+    @include tablet {
+      font-size: 1.4rem;
+    }
+  }
+  &__input + .label {
+    @include tablet {
+      font-size: 1.2rem;
+    }
   }
 
   &__textarea {
@@ -26,10 +35,14 @@
     background-color: $bg-main-color;
     border: 2px solid $grey-color;
     color: $txt-main-color;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     padding: 5px;
     transition: border 0.4s ease;
     font-family: inherit;
+
+    @include tablet {
+      font-size: 1.4rem;
+    }
 
     &:focus {
       outline: none;
@@ -40,6 +53,10 @@
       font-size: 1rem;
       font-weight: 500;
       color: $txt-second-color;
+
+      @include tablet {
+        font-size: 1.3rem;
+      }
     }
 
     &:not(:placeholder-shown) {
@@ -58,6 +75,11 @@
 
   &__btn {
     width: 140px;
+
+    @include tablet {
+      width: 170px;
+      font-size: 1.4rem;
+    }
   }
 
   &__response {

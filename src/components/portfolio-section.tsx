@@ -62,7 +62,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({
       <div className="portfolio-list__item__down">
         <p className="portfolio-list__item__info">
           <span>{title}</span>
-          <p>{description}</p>
+          <span>{description}</span>
         </p>
       </div>
     </div>

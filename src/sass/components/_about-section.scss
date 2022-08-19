@@ -5,11 +5,17 @@
   &__text {
     @include flex(center, center);
     padding: 38px 0;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
 
     p {
       width: 50%;
       text-align: center;
+    }
+
+    @include tablet {
+      p {
+        width: 80%;
+      }
     }
   }
 
@@ -55,6 +61,11 @@
       &__details {
         color: $txt-main-color;
         text-align: center;
+        font-size: 1.1rem;
+
+        @include mobile{
+          font-size: 1.2rem;
+        }
       }
     }
   }
