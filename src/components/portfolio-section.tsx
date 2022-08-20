@@ -1,18 +1,23 @@
-import React, {RefObject} from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
+
+import portfolio, { IPortfolioItem } from '../assets/data/portfolio-data';
 
 import Section from './section';
 
 import { BsGithub as GithubIcon } from 'react-icons/bs';
 import { BiLinkAlt as LinkIcon } from 'react-icons/bi';
 
-import portfolio, {IPortfolioItem} from "../assets/data/portfolio-data"
+import { RefsContext } from '../context/refs-provider';
 
-interface IProps {
-  refer?: RefObject<HTMLDivElement>;
-}
-
-const PortfolioSection: React.FC<IProps> = ({refer}) => {
+const PortfolioSection = () => {
   const portfolioData = portfolio.getAll();
+
+  const refer = useRef<HTMLDivElement>(null);
+  const refsContext = useContext(RefsContext);
+
+  useEffect(() => {
+    refsContext?.setPortfolio(refer);
+  }, [refer]);
 
   return (
     <Section refer={refer} title="Portfolio" className="portfolio">

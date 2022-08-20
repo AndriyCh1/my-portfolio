@@ -1,26 +1,32 @@
-import React, {RefObject} from 'react';
-import Section from './section';
+import React, { useContext, useEffect, useRef } from 'react';
+
 import {
   BsFillTelephoneFill as PhoneIcon,
-  BsLinkedin as LinkedinIcon,
   BsGithub as GithubIcon,
+  BsLinkedin as LinkedinIcon,
 } from 'react-icons/bs';
 import { MdEmail as EmailIcon } from 'react-icons/md';
 
-interface IProps {
-  refer?: RefObject<HTMLDivElement>;
-}
+import Section from './section';
 
-const AboutSection: React.FC<IProps> = ({refer}) => {
+import { RefsContext } from '../context/refs-provider';
+
+const AboutSection = () => {
+  const refer = useRef<HTMLDivElement>(null);
+  const refsContext = useContext(RefsContext);
+
+  useEffect(() => {
+    refsContext?.setAbout(refer);
+  }, [refer]);
+
   return (
     <Section refer={refer} title="About me" className="about">
       <div className="about__text">
         <p>
-          Hi! My name is Andriy, I am a 4th year student majoring in
-          Computer Science at Ternopil National University. I had several months of
-          work experience as a Full Stack Developer in a small company, which I joined
-          after training. I spend most of my time studying and learning something new,
-          every day I study new material and improve my skills.
+          Hi! My name is Andriy, I am a 4th year student majoring in Computer Science at Ternopil
+          National University. I had several months of work experience as a Full Stack Developer in
+          a small company, which I joined after training. I spend most of my time studying and
+          learning something new, every day I study new material and improve my skills.
         </p>
       </div>
       <div className="about__contacts">
@@ -33,7 +39,10 @@ const AboutSection: React.FC<IProps> = ({refer}) => {
             <p>achekanovskiy@gmail.com</p>
           </div>
         </a>
-        <a href="https://www.linkedin.com/in/andrii-chekanovskyi-28413a1a1/" className="about__contacts__item">
+        <a
+          href="https://www.linkedin.com/in/andrii-chekanovskyi-28413a1a1/"
+          className="about__contacts__item"
+        >
           <div className="about__contacts__item__icon">
             <LinkedinIcon />
           </div>

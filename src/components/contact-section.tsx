@@ -1,17 +1,17 @@
-import React, {RefObject, useRef, useState} from 'react';
+import React, {useContext, useEffect, useRef, useState} from 'react';
+import emailjs from 'emailjs-com';
+
+import env from '../utils/env';
+
 import Input from './input';
 import Section from './section';
 import Button from './button';
-import emailjs from 'emailjs-com';
-import env from '../utils/env';
+
+import {RefsContext} from "../context/refs-provider";
 
 const { SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY, TO_EMAIL } = env;
 
-interface IProps {
-  refer?: RefObject<HTMLDivElement>;
-}
-
-const ContactSection: React.FC<IProps> = ({refer}) => {
+const ContactSection = () => {
   const [nameInput, setNameInput] = useState('');
   const [lastNameInput, setLastNameInput] = useState('');
   const [emailInput, setEmailInput] = useState('');
@@ -63,6 +63,13 @@ const ContactSection: React.FC<IProps> = ({refer}) => {
       }
     }
   };
+
+  const refer = useRef<HTMLDivElement>(null)
+  const refsContext = useContext(RefsContext);
+
+  useEffect(() => {
+    refsContext?.setContact(refer);
+  }, [refer])
 
   return (
     <Section refer={refer} title="Get in touch" className="contact">

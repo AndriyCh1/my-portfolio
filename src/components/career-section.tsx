@@ -1,11 +1,4 @@
-import React, {Fragment, RefObject, useCallback, useEffect, useState} from 'react';
-
-import Section from './section';
-import CheckBox from './check-box';
-
-import { BsFillBriefcaseFill as CareerIcon } from 'react-icons/bs';
-import { MdSchool as EducationIcon } from 'react-icons/md';
-import { FaSlackHash as ActivityIcon } from 'react-icons/fa';
+import React, { Fragment, useCallback, useContext, useEffect, useRef, useState } from 'react';
 
 import timeline, {
   IActivity,
@@ -16,17 +9,22 @@ import timeline, {
 
 import { formatDate } from '../utils/date';
 
+import { BsFillBriefcaseFill as CareerIcon } from 'react-icons/bs';
+import { MdSchool as EducationIcon } from 'react-icons/md';
+import { FaSlackHash as ActivityIcon } from 'react-icons/fa';
+
+import Section from './section';
+import CheckBox from './check-box';
+
+import { RefsContext } from '../context/refs-provider';
+
 enum FILTERS {
   education = 'EDUCATION',
   career = 'CAREER',
   activity = 'ACTIVITY',
 }
 
-interface IProps {
-  refer?: RefObject<HTMLDivElement>;
-}
-
-const CareerSection: React.FC<IProps> = ({refer}) => {
+const CareerSection = () => {
   const initFilter = {
     education: true,
     activity: false,
@@ -87,6 +85,13 @@ const CareerSection: React.FC<IProps> = ({refer}) => {
     setPathData(updateData());
   }, [updateData]);
 
+  const refer = useRef<HTMLDivElement>(null);
+  const refsContext = useContext(RefsContext);
+
+  useEffect(() => {
+    refsContext?.setCareer(refer);
+  }, [refer]);
+
   return (
     <Section refer={refer} title={'Career'} className="career">
       <div className="career-filters">
@@ -121,7 +126,9 @@ const CareerSection: React.FC<IProps> = ({refer}) => {
               <span className="career-path__mute"></span>
             </>
           ) : (
-            <div className="career-path__empty">No data, make sure, that at least one filter is chosen =)</div>
+            <div className="career-path__empty">
+              No data, make sure, that at least one filter is chosen =)
+            </div>
           )}
         </div>
       </div>
@@ -159,7 +166,7 @@ const CareerItem: React.FC<{ career: ICareer }> = ({ career }) => {
   return (
     <PathItemWrapper startDate={career.startDate} endDate={career.endDate} icon={<CareerIcon />}>
       <p className="career-path__item__content__title">{career.role}</p>
-      <p dangerouslySetInnerHTML={{ __html: career?.description || "" }} />
+      <p dangerouslySetInnerHTML={{ __html: career?.description || '' }} />
     </PathItemWrapper>
   );
 };
@@ -192,7 +199,7 @@ const ActivityItem: React.FC<{ activity: IActivity }> = ({ activity }) => {
       icon={<ActivityIcon />}
     >
       <p className="career-path__item__content__title">{activity.title}</p>
-      <p dangerouslySetInnerHTML={{ __html: activity?.description || "" }} />
+      <p dangerouslySetInnerHTML={{ __html: activity?.description || '' }} />
     </PathItemWrapper>
   );
 };

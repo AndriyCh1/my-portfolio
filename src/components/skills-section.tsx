@@ -1,14 +1,12 @@
-import React, {Fragment, RefObject, useEffect, useState} from 'react';
+import React, { Fragment, useContext, useEffect, useRef, useState } from 'react';
+
+import skills, { ICategory, ISkill } from '../assets/data/skills-data';
 
 import Section from './section';
 
-import skills, { ICategory, ISkill } from "../assets/data/skills-data";
+import { RefsContext } from '../context/refs-provider';
 
-interface IProps {
-    refer?: RefObject<HTMLDivElement>;
-}
-
-const SkillsSection: React.FC<IProps> = ({refer}) => {
+const SkillsSection = () => {
   const skillsData = skills.getAll();
   const [skillCategories, setSkillCategories] = useState<string[]>([]);
   const [currentCategory, setCurrentCategory] = useState('');
@@ -22,6 +20,13 @@ const SkillsSection: React.FC<IProps> = ({refer}) => {
     setSkillCategories(categories);
     setCurrentCategory(categories.length ? categories[0] : '');
   }, []);
+
+  const refer = useRef<HTMLDivElement>(null);
+  const refsContext = useContext(RefsContext);
+
+  useEffect(() => {
+    refsContext?.setSkills(refer);
+  }, [refer]);
 
   return (
     <Section refer={refer} title="Skills" className="skills">

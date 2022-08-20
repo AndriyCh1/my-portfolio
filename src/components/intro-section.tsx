@@ -1,14 +1,18 @@
-import React, { RefObject } from 'react';
+import React, {RefObject, useContext, useEffect, useRef} from 'react';
 import Section from './section';
 import IntroPhoto from '../assets/images/intro-photo.jpg';
 import Button from './button';
+import {RefsContext} from "../context/refs-provider";
 
-interface IProps {
-  refer?: RefObject<HTMLDivElement>;
-}
+const IntroSection = () => {
+    const refer = useRef<HTMLDivElement>(null)
+    const refsContext = useContext(RefsContext);
 
-const IntroSection: React.FC<IProps> = ({ refer }) => {
-  return (
+    useEffect(() => {
+        refsContext?.setIntro(refer);
+    }, [refer])
+
+    return (
     <Section refer={refer} className="intro">
       <div className="intro__info">
         <h2 className="intro__info__title">
