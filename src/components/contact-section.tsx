@@ -45,7 +45,7 @@ const ContactSection = () => {
       if (SERVICE_ID && TEMPLATE_ID && PUBLIC_KEY && TO_EMAIL) {
         emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY).then(
           (result) => {
-            showResponse({ status: result.status, message: 'The message successfully sent!' });
+            showResponse({ status: result.status, message: 'The message was successfully sent!' });
           },
           (error) => {
             showResponse({

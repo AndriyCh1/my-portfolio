@@ -41,10 +41,12 @@ const paths: IPath[] = [
         startDate: new Date('2021-07-07'),
         endDate: new Date('2021-10-20'),
         role: 'Junior Full Stack Developer',
-        company: 'Hardsoft',
+        company: 'YourItSoft',
         description:
-        'Worked with on the Sunflower project. This web-app helps to account and calculate tariffs, it generates monthly reports ' +
-        'payment documents and registers. I worked with several forms for accounting tariffs, tariff groups and counters.' +
+        'The web app helps to account and calculate tariffs, it generates monthly ' +
+        'reports payment documents and registers. I worked on creating several forms of' +
+        'accounting tariffs, tariff groups, counters and their processing on the frontend and' +
+        'backend. Worked with React.js, Node.js (Nest), PostgreSQL, MaterialUI, TypeORM.' +
         '<br><span style="display: block; margin-top:5px"><b>Web stack:</b> React.js, Typescript, React Hook Form, Material-UI, Nest.js</span>',
       },
     ],
@@ -69,9 +71,9 @@ const paths: IPath[] = [
         endDate: new Date('2021-04-05'),
         title: 'JS course at Binary Studio Academy ❤️',
         description:
-        'Our team worked on the "Grow Up" project. We had been developing a system for tracking worker`s growing as a specialist. The main goal of the course is to gain real experience of working at a company. We had every day meet-ups, demos at Fridays and spent time really effectively.' +
+        'Our team worked on the "Grow Up" project. It is a system for tracking workers\' growth as specialists. The main goal of the course is to gain real experience of working at a company.' +
         '<br><span style="display: block; margin-top:5px"><b>Web stack: </b>Redux, React, TypeScript, JS, PostgreSQL, Amazon S3, SCSS, HTML5, Node.js, Express.js, TypeORM, Bootstrap, Chart.js, React Flow, Redux Toolkit.</span>' +
-        '<a style="display: block; margin-top:5px" href="https://study.binary-studio.com/certificate/b794584e-3746-4448-a62e-48bbd897c930">Certificate: JS course</a>'
+        '<a style="display: block; margin-top:5px" href="https://study.binary-studio.com/certificate/b794584e-3746-4448-a62e-48bbd897c930">Certificate</a>'
       },
       {
         startDate: new Date('2017-11-15'),
@@ -90,8 +92,11 @@ const paths: IPath[] = [
       },
       {
         startDate: new Date('2022-07-08'),
-        title: '"Conversational English" course, EnglishDom',
-        description: '1:1 with tutor, 40% of speaking, 20% of listening, 20% of grammar'
+        endDate: new Date('2022-11-06'),
+        title: 'English course at EnglishDom',
+        description:
+          '1:1 with tutor, 40% of speaking, 20% of listening, 20% of grammar' +
+          '<a style="display: block; margin-top:5px" href="https://www.englishdom.com/ua/cn/53041881">Certificate</a>'
       },
     ],
   },

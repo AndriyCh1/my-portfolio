@@ -16,14 +16,12 @@ const IntroSection = () => {
     <Section refer={refer} className="intro">
       <div className="intro__info">
         <h2 className="intro__info__title">
-          Hi, I am <span>Chekanovskyi Andrii</span>
+          Hi, I am <span>Andrii Chekanovskyi</span>
         </h2>
-        <p className="intro__info__subtitle"> Fullstack Developer</p>
+        <p className="intro__info__subtitle"> Junior Full Stack Developer</p>
         <div className="intro__info__btns">
-          <a href="../assets/pdf/CV.pdf" target="_blank" download>
-            <Button className="intro__info__btns__btn" variant="secondary">
-              Download CV
-            </Button>
+          <a href="https://drive.google.com/file/d/1FRHHLJMn71JdMioyi5i3xKM1Q8qUBcws/view?usp=share_link" target="_blank">
+            <Button className="intro__info__btns__btn" variant="secondary">Look at the resume in pdf format</Button>
           </a>
         </div>
       </div>
