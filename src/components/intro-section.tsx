@@ -20,7 +20,7 @@ const IntroSection = () => {
         </h2>
         <p className="intro__info__subtitle"> Junior Full Stack Developer</p>
         <div className="intro__info__btns">
-          <a href="https://drive.google.com/file/d/1FRHHLJMn71JdMioyi5i3xKM1Q8qUBcws/view?usp=share_link" target="_blank">
+          <a href="https://drive.google.com/file/d/1e2lTwkoI57yxPFCppb6BzCViXnPx2ZpZ/view?usp=share_link" target="_blank">
             <Button className="intro__info__btns__btn" variant="secondary">Look at the resume in pdf format</Button>
           </a>
         </div>
