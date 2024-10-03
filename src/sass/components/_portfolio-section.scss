@@ -1,12 +1,13 @@
 .portfolio {
   padding-bottom: 100px;
+  padding-top: 100px;
 }
 
 .portfolio-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  padding-top: 20px;;
+  padding-top: 20px;
 
   @include tablet {
     grid-template-columns: repeat(2, 1fr);
@@ -21,6 +22,7 @@
     border-radius: 15px;
     @include flex(center, center);
     flex-direction: column;
+
 
     &__up {
       position: relative;
@@ -56,6 +58,7 @@
 
     &__info {
       text-align: center;
+      height: 100%;
 
       span {
         font-weight: 600;
@@ -65,6 +68,13 @@
       span + span {
         display: block;
         font-weight: 400;
+      }
+
+      &__description {
+        @include flex(center, center);
+        flex-direction: column;
+        height: 100%;
+        padding-bottom: 10px;
       }
     }
   }
@@ -86,8 +96,7 @@
     @include flex(center, center);
     flex-direction: column;
     opacity: 0;
-    transform: scale(0);
-    transition: all 0.3s ease-in-out;
+    transition: all 0.5s ease-in;
 
     h3 {
       font-size: 1.5rem;

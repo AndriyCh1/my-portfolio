@@ -1,9 +1,7 @@
 import React, { Fragment, useContext, useEffect, useRef, useState } from 'react';
-
+import { motion, AnimatePresence } from 'framer-motion';
 import skills, { ICategory, ISkill } from '../assets/data/skills-data';
-
 import Section from './section';
-
 import { RefsContext } from '../context/refs-provider';
 
 const SkillsSection = () => {
@@ -28,30 +26,43 @@ const SkillsSection = () => {
     refsContext?.setSkills(refer);
   }, [refer]);
 
+  const variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
     <Section refer={refer} title="Skills" className="skills">
       <div className="skills__tabs">
         {skillCategories.map((item, index) => (
-          <p
+          <div
             key={index}
             className={`skills__tabs__item ${item === currentCategory ? 'active' : ''}`}
             onClick={() => setCurrentCategory(item)}
           >
             {item}
-          </p>
+          </div>
         ))}
       </div>
-      {skillsData.map((categoryItem: ICategory, index) => (
-        <Fragment key={index}>
-          {categoryItem.category === currentCategory ? (
-            <div className="skills__list">
+      <AnimatePresence mode="wait">
+        {skillsData.map((categoryItem: ICategory, index) =>
+          categoryItem.category === currentCategory ? (
+            <motion.div
+              key={index}
+              className="skills__list"
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              variants={variants}
+              transition={{ duration: 0.3 }}
+            >
               {categoryItem.skills.map((skillItem, skillItemIndex) => (
                 <Skill key={skillItemIndex} name={skillItem.name} icon={skillItem.icon} />
               ))}
-            </div>
-          ) : null}
-        </Fragment>
-      ))}
+            </motion.div>
+          ) : null,
+        )}
+      </AnimatePresence>
     </Section>
   );
 };

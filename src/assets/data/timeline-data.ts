@@ -32,22 +32,50 @@ export interface IPathInfoByDate {
   activity?: IActivity;
 }
 
-
-// TODO: fill paths with more info
 const paths: IPath[] = [
   {
     career: [
       {
-        startDate: new Date('2021-07-07'),
-        endDate: new Date('2021-10-20'),
+        startDate: new Date('2021-07-01'),
+        endDate: new Date('2022-08-01'),
         role: 'Junior Full Stack Developer',
-        company: 'YourItSoft',
+        company: 'Your It Soft',
         description:
-        'The web app helps to account and calculate tariffs, it generates monthly ' +
-        'reports payment documents and registers. I worked on creating several forms of' +
-        'accounting tariffs, tariff groups, counters and their processing on the frontend and' +
-        'backend. Worked with React.js, Node.js (Nest), PostgreSQL, MaterialUI, TypeORM.' +
-        '<br><span style="display: block; margin-top:5px"><b>Web stack:</b> React.js, Typescript, React Hook Form, Material-UI, Nest.js</span>',
+          'Project: A project designed to help farms and households track energy usage, generate reports, and facilitate monthly settlements' +
+          '<br/>' +
+          '<br/> • Designed and implemented UI and APIs for managing tariffs and tariff groups, allowing users to manage tariff data;' +
+          '<br/> • Developed functionality to track client and contractor actions, ensuring a detailed history of changes;' +
+          '<br/> • Assisted in developing the handbooks module to capture data on new green energy consumers and manage' +
+          'customer service center information.' +
+          '<br/><span style="display: block; margin-top:5px"><b>Tech stack:</b> React.js, Typescript, React Hook Form, Material-UI, Nest.js</span>',
+      },
+      {
+        startDate: new Date('2023-09-01'),
+        endDate: new Date('2023-11-01'),
+        role: 'Full Stack Developer',
+        company: 'CGS-team ',
+        description:
+          'Project: A platform that enables multifamily operators to work better with real estate agents and locators.' +
+          '<br/>' +
+          '<br/> • Contributed to lead details and property management modules along with filtering, and searching;' +
+          '<br/> • Implemented bug fixes and minor feature enhancements, improving system stability and user experience.' +
+          '<br/><span style="display: block; margin-top:5px"><b>Tech stack:</b> TypeScript, Next.js, React, Express.js, SWR, PostgreSQL, TypeORM</span>',
+      },
+      {
+        startDate: new Date('2023-11-01'),
+        endDate: new Date('2024-09-01'),
+        role: 'Full Stack Developer',
+        company: 'Handelnine Global',
+        description:
+          'Project: ERP system.' +
+          '<br/>' +
+          '<br/> • Developed an admin panel for managing users and setting up their permissions;' +
+          '<br/> • Contributed to order and warehouse management modules using React and Nest.js;' +
+          '<br/> • Automated settlements for shipment providers using API integrations, FTP connection and file parsing logic,' +
+          'coupled with AWS S3 integration, reducing processing time;' +
+          '<br/> • Improved operational responsiveness by integrating Slack API for downtime notifications;' +
+          '<br/> • Implemented role-based access control for frontend and backend to manage user permissions.' +
+          '<br/><span style="display: block; margin-top:5px"><b>Tech stack:</b> TypeScript, React, Nest.js, Redux, MySQL, MongoDB, Prisma, Mongoose, AWS, Jest, Agile</span>',
       },
     ],
     education: [
@@ -60,9 +88,17 @@ const paths: IPath[] = [
       },
       {
         startDate: new Date('2021-09-01'),
+        endDate: new Date('2023-06-01'),
         title: 'Computer science',
         university: 'Ternopil Ivan Puluj National Technical University, Ukraine',
-        degree: 'Bachelor degree',
+        degree: "Bachelor's degree",
+      },
+      {
+        startDate: new Date('2023-09-01'),
+        endDate: new Date('2025-01-01'),
+        title: 'Computer science',
+        university: 'Ternopil Ivan Puluj National Technical University, Ukraine',
+        degree: "Master's degree",
       },
     ],
     activity: [
@@ -71,32 +107,27 @@ const paths: IPath[] = [
         endDate: new Date('2021-04-05'),
         title: 'JS course at Binary Studio Academy ❤️',
         description:
-        'Our team worked on the "Grow Up" project. It is a system for tracking workers\' growth as specialists. The main goal of the course is to gain real experience of working at a company.' +
-        '<br><span style="display: block; margin-top:5px"><b>Web stack: </b>Redux, React, TypeScript, JS, PostgreSQL, Amazon S3, SCSS, HTML5, Node.js, Express.js, TypeORM, Bootstrap, Chart.js, React Flow, Redux Toolkit.</span>' +
-        '<a style="display: block; margin-top:5px" href="https://study.binary-studio.com/certificate/b794584e-3746-4448-a62e-48bbd897c930">Certificate</a>'
+          'Our team worked on the "Grow Up" project. It is a system for tracking workers\' growth as specialists. The main goal of the course is to gain real experience of working at a company.' +
+          '<br><span style="display: block; margin-top:5px"><b>Web stack: </b>Redux, React, TypeScript, JS, PostgreSQL, Amazon S3, SCSS, HTML5, Node.js, Express.js, TypeORM, Bootstrap, Chart.js, React Flow, Redux Toolkit.</span>' +
+          '<a style="display: block; margin-top:5px" href="https://study.binary-studio.com/certificate/b794584e-3746-4448-a62e-48bbd897c930">Certificate</a>',
       },
       {
         startDate: new Date('2017-11-15'),
         endDate: new Date('2017-11-15'),
-        title: '2nd place in the second stage of the All-Ukrainian Mathematics Olympiad among students',
+        title:
+          '2nd place in the second stage of the All-Ukrainian Mathematics Olympiad among students',
       },
       {
         startDate: new Date('2020-12-24'),
         endDate: new Date('2020-12-24'),
-        title: '3rd place in the nomination "Programming" in the open information technology competition "Byte" among students of Ternopil ',
+        title:
+          '3rd place in the nomination "Programming" in the open information technology competition "Byte" among students of Ternopil ',
       },
       {
         startDate: new Date('2018-11-20'),
         endDate: new Date('2018-11-20'),
-        title: '2nd place in the second stage of the All-Ukrainian Mathematics Olympiad among students',
-      },
-      {
-        startDate: new Date('2022-07-08'),
-        endDate: new Date('2022-11-06'),
-        title: 'English course at EnglishDom',
-        description:
-          '1:1 with tutor, 40% of speaking, 20% of listening, 20% of grammar' +
-          '<a style="display: block; margin-top:5px" href="https://www.englishdom.com/ua/cn/53041881">Certificate</a>'
+        title:
+          '2nd place in the second stage of the All-Ukrainian Mathematics Olympiad among students',
       },
     ],
   },

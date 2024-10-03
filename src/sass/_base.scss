@@ -12,6 +12,8 @@ html {
   @include tablet {
     font-size: 11px;
   }
+
+  height: 100%;
 }
 
 a {

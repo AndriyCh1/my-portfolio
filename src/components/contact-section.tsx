@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useRef, useState} from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import emailjs from 'emailjs-com';
 
 import env from '../utils/env';
@@ -7,7 +7,7 @@ import Input from './input';
 import Section from './section';
 import Button from './button';
 
-import {RefsContext} from "../context/refs-provider";
+import { RefsContext } from '../context/refs-provider';
 
 const { SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY, TO_EMAIL } = env;
 
@@ -64,12 +64,12 @@ const ContactSection = () => {
     }
   };
 
-  const refer = useRef<HTMLDivElement>(null)
+  const refer = useRef<HTMLDivElement>(null);
   const refsContext = useContext(RefsContext);
 
   useEffect(() => {
     refsContext?.setContact(refer);
-  }, [refer])
+  }, [refer]);
 
   return (
     <Section refer={refer} title="Get in touch" className="contact">
@@ -92,7 +92,7 @@ const ContactSection = () => {
 
         <Input
           name="from_email"
-          label="Email"
+          label="Email to reply to (required)"
           value={emailInput}
           required={true}
           type="email"
@@ -112,7 +112,7 @@ const ContactSection = () => {
           required={true}
           name="message"
           className="contact-form__textarea"
-          placeholder="Message"
+          placeholder="Message (required)"
           rows={10}
           defaultValue={messageInput}
           onChange={(e: React.FormEvent<HTMLTextAreaElement>) =>
@@ -122,7 +122,7 @@ const ContactSection = () => {
 
         <div className="contact-form__btn-wrapper">
           <Button className="contact-form__btn" type="submit">
-            Submit now
+            Send
           </Button>
           {emailResponse.status !== -1 && (
             <span

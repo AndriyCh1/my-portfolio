@@ -1,22 +1,10 @@
 export const formatDate = (date: Date): string => {
-    const months = [
-        'Jan',
-        'Feb',
-        'Mar',
-        'Apr',
-        'May',
-        'Jun',
-        'Jul',
-        'Aug',
-        'Sep',
-        'Oct',
-        'Nov',
-        'Dec',
-    ];
+  const options: Intl.DateTimeFormatOptions = {
+    timeZone: 'Europe/Kyiv',
+    year: 'numeric',
+    month: 'short',
+  };
 
-    const monthName = months[date.getMonth()];
-    const year = date.getFullYear();
-    const dateNumber = date.getDate();
-
-    return `${dateNumber} ${monthName} ${year}`;
+  const formatter = new Intl.DateTimeFormat('en-US', options);
+  return formatter.format(date);
 };

@@ -26,13 +26,13 @@ enum FILTERS {
 
 const CareerSection = () => {
   const initFilter = {
-    education: true,
+    education: false,
     activity: false,
     career: true,
   };
 
   // TODO: solve problem with useEffect and that instead of this
-  const sortedData = timeline.sortByDate(timeline.groupByDate(timeline.getAll()));
+  const sortedData = timeline.sortByDate(timeline.groupByDate(timeline.getAll()), 'desc');
   const [filter, setFilter] = useState(initFilter);
   const [pathData, setPathData] = useState<IPathInfoByDate[]>([]);
 

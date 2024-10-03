@@ -1,7 +1,6 @@
-import React from 'react';
-import Navigation from './navigation';
 import Footer from './footer';
 
+import Header from './header';
 import IntroSection from './intro-section';
 import AboutSection from './about-section';
 import SkillsSection from './skills-section';
@@ -15,7 +14,7 @@ const Layout = () => {
   return (
     <div className="main-wrapper">
       <RefsProvider>
-        <Navigation />
+        <Header />
         <main className="main">
           <IntroSection />
           <AboutSection />
